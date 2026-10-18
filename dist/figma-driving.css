@@ -1,0 +1,94 @@
+/* Figma 5:253 (1440x900), 5:396 (390x844). Live game data and scenery. */
+body[data-mode=drive] #driving{position:relative;display:block;width:100%;max-width:none;height:100dvh;min-height:540px;padding:0;border:0;border-radius:0;background:#1e2833;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC',sans-serif;color:#f1f7fc}
+#driving .windshield{position:absolute;inset:0 0 auto;height:calc(100% - 340px);min-height:200px;border:0;border-radius:0;overflow:hidden}
+#driving #scene{width:100%;height:100%;display:block}
+#driving .glass-frame,#driving .glass-label,#driving .weather-label{display:none}
+#driving .cab-foreground{position:absolute;inset:0 0 auto;height:calc(100% - 132px);pointer-events:none;z-index:2;display:block}
+#driving .cab-foreground img{width:100%;height:100%;object-fit:cover;object-position:center top}
+#driving:after{content:'';position:absolute;bottom:0;left:0;right:0;height:234px;background:linear-gradient(transparent,#071726 41%);pointer-events:none;z-index:2}
+#driving .game-topbar{position:absolute;z-index:5;top:max(12px,env(safe-area-inset-top));left:18px;right:18px;height:48px;padding:0;pointer-events:none}
+#driving .drive-top-actions{display:flex;gap:16px}#driving #restart{order:-1}
+#driving .game-topbar button{pointer-events:auto;display:flex;align-items:center;justify-content:center;width:48px;height:48px;min-width:48px;min-height:48px;padding:12px;background:#000c;border:0;border-radius:16px;color:#f1f7fc;box-shadow:none}
+#driving .game-topbar .ui-icon{width:24px;height:24px}
+#driving .route{position:absolute;top:35px;left:50%;transform:translateX(-50%);width:min(900px,calc(100% - 320px));height:62px;padding:16px 24px;border:1px solid #7896ac;border-radius:30px;background:#000;z-index:4}
+#driving .stops{height:100%;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:12px;position:relative}
+#driving .stops:before{top:5px;left:8.333%;right:8.333%;background:#2b445b;height:2px}
+#driving .stop{height:30px;grid-template-rows:12px 16px;gap:2px;line-height:1.25;color:#b4c9da}
+#driving .stop i{width:7px;height:7px;margin:2px 0 0;background:#b4c9da}
+#driving .stop.active i{background:#75e6c3;box-shadow:0 0 0 2px #135044}
+#driving .stop.active{color:#75e6c3}#driving .stop.done i{background:#75e6c3}
+#driving .stop>span{font-size:11px;line-height:14px;height:auto}#driving .stop .stop-status{display:none}
+#driving .cab{position:absolute;left:18px;right:18px;bottom:8px;z-index:3;padding:32px;border:1px solid #7896ac;border-radius:54px;background:linear-gradient(#1e2a36,#091622);box-shadow:none;min-height:0}
+#driving .console{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:160px 82px;gap:24px}
+#driving .instrument-screen,#driving .info-screen,#driving .comfort-panel{padding:16px 24px;border:1px solid #7896ac;border-radius:30px;background:#000;box-shadow:none;min-height:0;color:#f1f7fc}
+#driving .instrument-screen{grid-column:1;grid-row:1}#driving .comfort-panel{grid-column:2;grid-row:1}#driving .info-screen{grid-column:3;grid-row:1}
+#driving .screen-title{font-size:12px;font-weight:400;line-height:15px;color:#b4c9da;margin:0;letter-spacing:0}
+#driving .speed-heading{height:24px;min-height:24px;margin:0 0 12px;gap:6px;flex-wrap:nowrap}
+#driving .door-summary{font-size:12px;color:#b4c9da;white-space:nowrap}
+#driving .speed-heading .notch-name{font-size:12px;min-width:72px;height:24px;padding:3px 7px;border-radius:5px}
+#driving .speed-ring{padding:0 0 12px}#driving .speed-ring-inner{height:52px;gap:5px;align-items:baseline}
+#driving .speed-number{font-size:45px;font-weight:600;line-height:56px;letter-spacing:0;text-shadow:none}
+#driving .speed-unit{font-size:10px;color:#b4c9da}#driving .speed-ring:after{height:6px;box-shadow:none}
+#driving .speed-ticks{font-family:inherit;font-size:8px;line-height:10px;height:10px;margin:2px 0 0;color:#b4c9da}
+#driving .speed-ticks span{padding:0}#driving .speed-ticks span:before{display:none}
+#driving .allowed{display:none}
+#driving .comfort-panel>.screen-title{margin:0 0 12px}#driving .comfort-row{display:grid;grid-template-columns:auto 1fr;grid-template-rows:59px 11px;gap:12px 5px;flex:0}
+#driving .comfort-row b{grid-column:1;grid-row:1;text-align:left;font-size:47px;line-height:59px;font-weight:600;flex-basis:auto}
+#driving .comfort-total{grid-column:2;grid-row:1;align-self:end;font-size:11px;margin:0 0 9px;color:#b4c9da}
+#driving .comfort-track{grid-column:1/-1;grid-row:2;width:100%;height:11px;box-shadow:none;border-radius:2px;background:#2b445b}
+#driving .comfort-track:after{background:repeating-linear-gradient(to right,transparent 0,transparent calc(10% - 3px),#000 calc(10% - 3px),#000 10%)}
+#driving .next-row{display:flex;justify-content:space-between;align-items:center;height:40px;margin:12px 0;gap:8px;flex-wrap:nowrap}
+#driving .station-destination{gap:10px}#driving .station-destination .ui-icon{width:32px;height:32px;padding:0;background:none;border:0;border-radius:0}
+#driving .next-row strong{font-size:30px;font-weight:500}#driving .distance{font-size:29px;letter-spacing:0;padding:0}#driving .distance small{font-size:12px}
+#driving .info-screen .progress{height:6px;margin:0 0 12px;background:#2b445b;border-radius:100px}
+#driving .metrics{display:flex;gap:12px;margin:0}#driving .metrics>div{display:flex;gap:4px;flex-wrap:nowrap;white-space:nowrap}#driving .metrics>div:last-child{display:none}
+#driving .metrics label{font-size:10px;color:#b4c9da;margin:0}#driving .metrics b{font-size:12px;color:#b4c9da;font-weight:400}
+#driving .lever-panel{grid-column:1/-1;grid-row:2}#driving .lever-buttons{grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;height:100%}
+#driving .lever-buttons button,#driving .cab[data-notch] .lever-buttons button{display:flex;flex-direction:row;align-items:center;justify-content:center;min-height:0;height:100%;padding:12px;gap:12px;border:2px solid #7896ac;border-radius:24px;background:linear-gradient(90deg,#29455c,#142b3e);box-shadow:none;color:#f1f7fc;margin:0;font-size:24px;font-weight:400;line-height:1.25}
+#driving .lever-buttons button span{font-size:24px;font-weight:400;line-height:1.25}#driving .lever-buttons .ui-icon{width:24px;height:24px;flex:none}
+#driving .cab[data-notch] #power:not(:disabled){background:linear-gradient(90deg,#1d6e59,#135044);border-color:#75e6c3;color:#f1f7fc;box-shadow:none}
+#driving .cab[data-notch] #brake:not(:disabled){background:linear-gradient(90deg,#50313f,#252a3a);border-color:#ffc2c9;color:#f1f7fc;box-shadow:none}
+#driving .cab[data-notch] #depart{background:#233c50;color:#f1f7fc;border-color:#7896ac}
+#driving .lever-buttons button:disabled{opacity:1;color:#b4c9da;background:#233c50;cursor:not-allowed}
+/* Explicit control states override the older cab styles at every viewport. */
+#driving .game-topbar #pause[aria-pressed=true]{display:flex;visibility:visible;opacity:1;background:#75e6c3;color:#07382f}
+#driving .cab[data-notch] .lever-buttons button:active:not(:disabled){transform:translateY(1px)}
+#driving .cab[data-notch] .lever-buttons button[aria-pressed=true]:not(:disabled){box-shadow:inset 0 0 0 2px currentColor}
+#driving .cab[data-notch] #coast[aria-pressed=true]:not(:disabled){background:linear-gradient(90deg,#41647e,#29455c);border-color:#d8e8f4;color:#f1f7fc;box-shadow:inset 0 0 0 2px #d8e8f4}
+#driving .switches,#driving .brake-advice{display:none}
+#driving .hint{position:fixed;z-index:6;bottom:350px;left:50%;transform:translateX(-50%);max-width:80%;font-size:12px;pointer-events:none}
+#driving button:focus-visible{outline:3px solid #75e6c3;outline-offset:3px}
+@media(max-width:1100px) and (min-width:731px){#driving .cab{padding:20px;border-radius:36px}#driving .console{gap:16px}#driving .instrument-screen,#driving .info-screen,#driving .comfort-panel{padding:16px}#driving .door-summary{display:none}#driving .next-row strong{font-size:22px}#driving .distance{font-size:22px}#driving .metrics{gap:5px}#driving .metrics>div{display:block}#driving .lever-buttons{gap:16px}#driving .windshield{height:calc(100% - 316px)}}
+@media(max-width:730px){
+body[data-mode=drive] #driving{max-width:none;min-height:600px;height:100dvh}
+#driving .game-topbar{top:max(36px,env(safe-area-inset-top));left:9px;right:9px}
+#driving .route{top:max(98px,calc(env(safe-area-inset-top) + 62px));left:9px;right:9px;transform:none;width:auto;height:52px;padding:9px 24px}
+#driving .stop>span{font-size:10px}#driving .stops{gap:12px}#driving .stop{height:30px}
+#driving .windshield{height:calc(100% - 434px);min-height:190px}
+#driving .cab-foreground{height:calc(100% - 269px)}
+#driving .cab{left:9px;right:9px;bottom:max(30px,env(safe-area-inset-bottom));border-radius:32px;padding:16px}
+#driving .console{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:157px 50px 111px;gap:12px 7px}
+#driving .instrument-screen,#driving .info-screen{padding:12px;border-radius:20px;min-height:0}
+#driving .instrument-screen{grid-column:1;grid-row:1}#driving .info-screen{grid-column:2;grid-row:1;position:relative}
+#driving .screen-title{font-size:10px;line-height:12.5px;margin:0}
+#driving .door-summary{display:none}#driving .speed-heading{margin:0 0 8px;height:24px;min-height:24px;gap:3px}
+#driving .speed-heading .screen-title{font-size:10px}#driving .speed-heading .notch-name{font-size:10px;min-width:59px;height:24px;padding:4px;border-radius:5px}
+#driving .speed-number{font-size:36px;line-height:45px;letter-spacing:0}#driving .speed-ring-inner{height:45px;gap:5px}#driving .speed-ring{padding-bottom:15px}#driving .speed-ring:after{height:7px}
+#driving .speed-ticks{height:10px;margin-top:2px;font-size:8px}#driving .allowed{display:flex;font-size:9px;margin-top:6px;padding:0;color:#b4c9da}#driving .allowed b{font-size:10px;color:#b4c9da}
+#driving .info-screen>#next-label{height:24px;display:flex;align-items:center;margin:0}
+#driving .station-destination{position:absolute;right:12px;top:12px;height:24px;gap:4px;max-width:calc(100% - 62px)}
+#driving .station-destination .ui-icon{width:12.5px;height:15px;flex:none}#driving .next-row strong{font-size:11px;overflow:hidden;text-overflow:ellipsis}
+#driving .next-row{height:45px;margin:8px 0;justify-content:center;display:flex}
+#driving .next-row .distance{font-size:36px;line-height:45px;padding:0;justify-content:center;gap:5px}#driving .distance small{font-size:10px}
+#driving .info-screen .progress{height:6px;margin:0 0 8px}
+#driving .metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0}#driving .metrics>div{display:block;white-space:nowrap}#driving .metrics label{font-size:8px;line-height:10px;display:block;margin-bottom:2px}#driving .metrics b{font-size:10px;line-height:12.5px}
+#driving .comfort-panel{grid-column:1/-1;grid-row:2;min-height:0;padding:12px;border-radius:20px;display:flex;flex-direction:row;align-items:center;gap:8px}
+#driving .comfort-panel>.screen-title{font-size:10px;margin:0}#driving .comfort-row{display:flex;flex:1;gap:4px;align-items:center;flex-wrap:nowrap}
+#driving .comfort-row b{font-size:21px;line-height:24px;text-align:left;flex-basis:auto;order:0}#driving .comfort-total{font-size:9px;line-height:12px;align-self:center;margin:0 12px 0 0;order:1}#driving .comfort-track{order:2;height:8px;flex:1;width:auto;min-width:0}
+#driving .lever-panel{grid-row:3}#driving .lever-buttons{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:52px 52px;gap:7px}
+#driving .lever-buttons button,#driving .cab[data-notch] .lever-buttons button{min-height:52px;height:52px;border-radius:20px;padding:12px;gap:12px;flex-direction:row}
+#driving .lever-buttons button span{font-size:18px;line-height:22.5px}
+#driving .hint{bottom:416px;font-size:10px}#driving:after{height:234px}
+}
+@media(max-width:360px){#driving .cab{padding:12px}#driving .instrument-screen,#driving .info-screen{padding:10px}#driving .station-destination{right:10px;top:10px}#driving .speed-heading .screen-title{font-size:9px}#driving .comfort-total{margin-right:3px}}
+@media(max-height:700px) and (max-width:730px){#driving .cab{bottom:max(8px,env(safe-area-inset-bottom))}#driving .game-topbar{top:max(12px,env(safe-area-inset-top))}#driving .route{top:max(74px,calc(env(safe-area-inset-top) + 62px))}#driving .windshield{height:calc(100% - 384px)}#driving .cab-foreground{height:calc(100% - 247px)}#driving .hint{bottom:395px}}

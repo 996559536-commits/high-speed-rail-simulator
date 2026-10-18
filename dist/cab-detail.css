@@ -1,0 +1,44 @@
+/* Driver console: inset instruments and tactile controls, matching the approved reference. */
+#driving .cab{padding:14px 16px 12px;border:1px solid #627f94;border-top-color:#91adbf;border-radius:26px 26px 14px 14px;background:linear-gradient(155deg,#294156 0,#122637 10%,#0a1928 65%,#091622);box-shadow:inset 0 2px 0 #bedbec30,inset 0 7px 16px #8aaac015,0 -7px 16px #03101b66}
+#driving .console{gap:11px 14px;grid-template-columns:1.15fr 1.55fr .85fr}
+#driving .instrument-screen,#driving .info-screen,#driving .comfort-panel{position:relative;min-height:150px;border:1px solid #54758e;border-radius:15px;padding:13px 17px;background:radial-gradient(ellipse at 0 0,#1c3549,#0b1c2b 80%);box-shadow:inset 0 1px 0 #a6cce91c,inset 0 -8px 18px #0002,0 2px 3px #020d1670}
+#driving .speed-heading{display:flex;align-items:center;justify-content:space-between;gap:8px;min-height:24px;margin-bottom:2px}
+#driving .speed-heading .screen-title{margin:0;white-space:nowrap}
+#driving .speed-heading .notch-name{display:inline-flex;align-items:center;justify-content:center;font:600 12px/1.3 system-ui,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:0;white-space:nowrap;border:1px solid #8ba5ba;background:#233b50;color:#f1f7fc;border-radius:6px;padding:4px 8px;min-width:67px}
+#driving .cab[data-notch=power] .notch-name{color:#9af3d6;border-color:#75e6c3;background:#12483e}
+#driving .cab[data-notch=brake] .notch-name{color:#ffc2c9;border-color:#e39dab;background:#422a3a}
+#driving .speed-number{font-size:62px;font-weight:650;letter-spacing:-2px;line-height:1.08;font-variant-numeric:tabular-nums;text-shadow:0 2px 12px #bde3ff12}
+#driving .speed-ring-inner{gap:7px;align-items:baseline}#driving .speed-unit{font-size:13px}
+#driving .speed-ring{padding:0 0 13px}#driving .speed-ring:after{height:7px;border-radius:5px;box-shadow:inset 0 1px 2px #0007;background:linear-gradient(to right,#64e7b7 var(--speed-fill,0%),#2b445b var(--speed-fill,0%))}
+#driving .speed-ticks{height:19px;position:relative;margin:3px 3px 0;color:#b4c9da;font:9px/14px ui-monospace,monospace}
+#driving .speed-ticks span{position:absolute;left:var(--tick);transform:translateX(-50%);padding-top:4px}
+#driving .speed-ticks span:before{content:'';position:absolute;top:0;left:50%;height:3px;width:1px;background:#7896ac}
+#driving .speed-ticks span:first-child{transform:none}#driving .speed-ticks span:last-child{transform:translateX(-100%)}
+#driving .allowed{margin:1px 0 0;padding-top:3px;font-size:10px}#driving .allowed b{font-size:11px}
+#driving .next-row{margin:13px 0 9px;gap:12px}#driving .station-destination{display:flex;align-items:center;gap:12px;min-width:0}
+#driving .station-destination .ui-icon{width:32px;height:36px;padding:5px;border-radius:8px;background:#24435c;color:#edf7ff;border:1px solid #7896ac}
+#driving .next-row strong{font-size:30px;font-weight:650}#driving .distance{font-size:29px;font-weight:600;letter-spacing:-.6px}#driving .distance small{letter-spacing:0}
+#driving .info-screen .progress{height:2px;background:#345168;margin:12px 0 10px}
+#driving .metrics{margin:0;gap:14px}#driving .metrics>div{display:flex;flex-wrap:wrap;gap:5px;align-items:baseline}#driving .metrics label{font-size:10px;margin:0}#driving .metrics b{font-size:12px;font-weight:500}
+#driving .comfort-panel>.screen-title{margin-bottom:8px}#driving .comfort-row{display:grid;grid-template-columns:1fr auto auto 1fr;grid-template-rows:1fr 13px;gap:5px;align-items:center}#driving .comfort-row b{grid-row:1;grid-column:2;font-size:47px;line-height:1.1;flex-basis:auto;text-align:right}#driving .comfort-total{grid-row:1;grid-column:3;align-self:end;margin-bottom:10px;color:#b4c9da;font-size:11px}#driving .comfort-track{grid-row:2;grid-column:1/-1;width:100%;height:11px;border-radius:3px;box-shadow:0 0 8px #65ddb41a}
+#driving .lever-buttons{gap:14px}#driving .lever-buttons button{min-height:65px;border:1px solid #7896ac;border-radius:12px;background:linear-gradient(135deg,#29455c,#142b3e);box-shadow:inset 0 1px 0 #bfdcf34d,inset 0 -3px 5px #0003,0 2px 4px #0004;gap:16px;font-size:20px;color:#f1f7fc}
+#driving .lever-buttons .ui-icon{width:30px;height:30px}
+#driving #power:not(:disabled){background:linear-gradient(135deg,#154c43,#123c38);border-color:#75e6c3;color:#ceffeb}
+#driving .cab[data-notch=power] #power:not(:disabled){background:linear-gradient(135deg,#1d6e59,#135044);border:2px solid #8af3cf;color:#effff9;box-shadow:inset 0 0 15px #8af3cf25,0 0 8px #75e6c323}
+#driving .cab[data-notch=coast] #coast:not(:disabled){border-color:#d8e8f4;box-shadow:inset 0 -3px #d8e8f4,inset 0 1px 0 #bfdcf34d}
+#driving #brake:not(:disabled){background:linear-gradient(135deg,#50313f,#252a3a);border-color:#dc8c9e;color:#ffc2c9}
+#driving .cab[data-notch=brake] #brake:not(:disabled){border:2px solid #ffc2c9;box-shadow:inset 0 -3px #ffc2c9,inset 0 0 15px #f0a0b21a}
+#driving .switches{gap:14px;margin-top:10px}#driving .switches button{border-radius:10px;background:linear-gradient(135deg,#1e394e,#102435);border-color:#7896ac;box-shadow:inset 0 1px 0 #9ac1dd20;min-height:44px}
+#driving .switches #depart:not(:disabled){background:linear-gradient(135deg,#8af0ce,#65d5b3);color:#07382f;border-color:#9af3d6}
+#driving .lever-buttons button:disabled,#driving .switches button:disabled{background:#233c50;color:#b4c9da;border-color:#7896ac;box-shadow:none}
+@media(max-width:730px){
+#driving .cab{padding:9px 8px 8px;border-radius:18px 18px 11px 11px}#driving .console{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);gap:7px}
+#driving .instrument-screen,#driving .info-screen{min-height:137px;padding:9px 10px;border-radius:11px}#driving .speed-heading{gap:4px;min-height:20px}#driving .speed-heading .screen-title{font-size:9px}#driving .speed-heading .notch-name{font-size:10px;min-width:53px;padding:3px 5px;border-radius:5px}
+#driving .speed-number{font-size:45px;line-height:1.15}#driving .speed-unit{font-size:10px}#driving .speed-ring{padding-bottom:11px}#driving .speed-ring:after{height:6px}#driving .speed-ticks{font-size:8px;height:17px;margin-top:2px}#driving .allowed{font-size:9px;padding-top:0}#driving .allowed b{font-size:10px}
+#driving .next-row{grid-template-columns:1fr;gap:4px;margin:7px 0}#driving .station-destination{gap:7px}#driving .station-destination .ui-icon{width:25px;height:28px;padding:4px;border-radius:6px}#driving .next-row strong{font-size:22px}#driving .distance{font-size:21px;padding-left:32px}#driving .distance small{font-size:10px}#driving .info-screen .progress{margin:8px 0;height:1px}#driving .metrics{gap:4px}#driving .metrics>div{display:block}#driving .metrics label{font-size:8px;display:block}#driving .metrics b{font-size:10px}
+#driving .comfort-panel{min-height:34px;padding:5px 10px;border-radius:9px;gap:8px}#driving .comfort-panel>.screen-title{font-size:10px;margin:0}#driving .comfort-row{display:flex;gap:4px}#driving .comfort-row b{font-size:21px;order:0}#driving .comfort-total{font-size:9px;margin:0 5px 0 0;align-self:center;order:1}#driving .comfort-track{order:2;height:8px;flex:1;width:auto}
+#driving .lever-buttons{gap:7px}#driving .lever-buttons button{min-height:65px;font-size:15px;gap:4px;border-radius:10px}#driving .lever-buttons .ui-icon{width:26px;height:26px}#driving .switches{gap:7px;margin-top:7px}#driving .switches button{border-radius:8px}
+}
+@media(max-width:360px){#driving .speed-heading{flex-wrap:wrap;gap:2px}#driving .speed-heading .screen-title{font-size:8px}#driving .speed-heading .notch-name{font-size:9px;min-width:48px}#driving .instrument-screen,#driving .info-screen{padding:8px}#driving .speed-number{font-size:39px}#driving .next-row strong{font-size:20px}}
+@media(max-height:680px) and (min-width:731px){#driving .cab{padding:8px 12px}#driving .instrument-screen,#driving .info-screen,#driving .comfort-panel{min-height:130px;padding:8px 13px}#driving .speed-number{font-size:45px}#driving .lever-buttons button{min-height:48px}#driving .console{gap:8px}#driving .switches{margin-top:7px}}
+@media(max-height:650px) and (max-width:730px){#driving .cab{padding:7px}#driving .instrument-screen,#driving .info-screen{min-height:121px;padding:7px 8px}#driving .speed-number{font-size:38px}#driving .speed-heading{min-height:18px}#driving .lever-buttons button{min-height:57px}#driving .comfort-panel{min-height:30px}#driving .next-row{margin:5px 0;gap:2px}#driving .distance{font-size:19px}#driving .info-screen .progress{margin:5px 0}}
